@@ -8,5 +8,4 @@ for i in range(1001):
     for j in range(1,i):
         cache[i][j] = cache[i-1][j-1] + cache[i-1][j]
         cache[i][j] %= MOD
-
 print(cache[N][K])
