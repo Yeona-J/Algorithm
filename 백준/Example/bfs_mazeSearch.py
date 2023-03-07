@@ -11,17 +11,19 @@ def bfs():
     chk = [[False] * M for _ in range(N)]
     chk[0][0] = True
     dq = deque()
-    dq.append((0,0))
+    dq.append((0,0,1))
     while dq:
-        y, x = dq.popleft()
+        y, x, d = dq.popleft()
+        nd = d + 1
+
+        if y == N-1 and x == M-1:
+            return d
+
         for k in range(4):
             ny = y + dy[k]
             nx = y + dx[k]
             if is_valid_coord(ny,nx) and board[ny][nx] == '1' and not chk[ny][nx]:
                 chk[ny][nx] = True
-                dq.append((ny,nx))
+                dq.append((ny,nx,nd))
 
-
-
-
-bfs()
+print(bfs())
