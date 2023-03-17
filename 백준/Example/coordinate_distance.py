@@ -10,9 +10,14 @@ for i in range(N):
         elif v == 2:
             chickens.append((i,j))
 
+def get_dist(a, b):
+    return abs(a[0]-b[0]) + abs(a[1]-b[1])
+
 ans = 2 * N * len(houses)
 for combi in combinations(chickens,M):
     tot = 0
+    for house in houses:
+        tot += min(get_dist(house,chicken) for chicken in combi)
 
     ans = min(ans,tot)
 
