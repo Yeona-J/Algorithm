@@ -1,6 +1,6 @@
 # Algorithm
 
-studying algorithm
+studying DS/AL/SQL
 
 - Data Structure
 - Brute force
